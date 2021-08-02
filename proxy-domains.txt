@@ -76,3 +76,15 @@ sling.com
 movetv.com
 optus.com.au
 optusnet.com.au
+zdf.de
+ard.de
+tvnow.de
+ntv.de
+bild.de
+3sat.de
+rtl.de
+amazon.de
+pro7.de
+prosieben.de
+prosiebenmaxx.de
+joyn.de
