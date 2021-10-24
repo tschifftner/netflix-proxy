@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+error_exit() {
+    echo "$1"; exit 1;
+}
+
+ROOT=$( pwd )
+EXTIP=${1:-$(get_ext_ipaddr 4)}
+
+[ ! -f "${ROOT}/docker-compose.yml" ] && error_exit "Run ./build.sh first!"
+
+# Clear config
+:> "${ROOT}/dnsmasq.conf"
+
+while read -r domain;
+do
+    echo "address=/${domain}/${EXTIP}" >> "${ROOT}/dnsmasq.conf"
+done < "${ROOT}/proxy-domains.txt"
+
+"${ROOT}/bin/restart"

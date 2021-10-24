@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+error_exit() {
+    echo "$1"; exit 1;
+}
+
+[ ! -f "$(PWD)/docker-compose.yml" ] && error_exit "Run ./build.sh first!"
+
+$(which docker-compose) down

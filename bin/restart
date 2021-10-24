@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+"$(PWD)/bin/stop"
+"$(PWD)/bin/start"
